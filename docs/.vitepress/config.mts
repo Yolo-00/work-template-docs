@@ -3,6 +3,7 @@ import { defineConfig } from 'vitepress'
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: "work-template",
+  head: [['link', { rel: 'icon', href: '/favicon.svg' }]],
   description: "work-template介绍",
   locales: {
     root: { label: '简体中文', lang: "zh" },
