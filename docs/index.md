@@ -4,15 +4,18 @@ layout: home
 
 hero:
   name: "work-template"
-  text: "A VitePress Site"
-  tagline: My great project tagline
+  text: "work-template 文档"
+  tagline: 开箱即用的前端模板框架
+  image:
+    src: /public/vitepress-logo-large.webp
+    alt: VitePress
   actions:
     - theme: brand
-      text: Markdown Examples
+      text: Get Started
       link: /markdown-examples
     - theme: alt
-      text: API Examples
-      link: /api-examples
+      text: View on GitHub
+      link: https://github.com/Yolo-00/work-template
 
 features:
   - title: Feature A
@@ -22,4 +25,3 @@ features:
   - title: Feature C
     details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
 ---
-
