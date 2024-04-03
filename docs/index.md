@@ -7,7 +7,7 @@ hero:
   text: "work-template 文档"
   tagline: 开箱即用的前端模板框架
   image:
-    src: /public/vitepress-logo-large.webp
+    src: /vitepress-logo-large.webp
     alt: VitePress
   actions:
     - theme: brand
