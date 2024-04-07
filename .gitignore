@@ -14,9 +14,6 @@ dist-ssr
 *.local
 stats.html
 
-docs/.vitepress/dist
-docs/.vitepress/cache
-
 
 # Editor directories and files
 .vscode/*
