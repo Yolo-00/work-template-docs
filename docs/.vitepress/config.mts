@@ -7,7 +7,7 @@ export default defineConfig({
   description: "work-template介绍",
   locales: {
     root: { label: '简体中文', lang: "zh" },
-    // en: { label: 'English', link: 'https://cn.vitejs.dev' },
+    en: { label: 'English', link: 'https://cn.vitejs.dev' },
   },
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config

@@ -25,3 +25,21 @@ features:
   - title: Feature C
     details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
 ---
+
+<script setup>
+import { VPTeamMembers } from 'vitepress/theme'
+
+const members = [
+  {
+    avatar: 'https://www.github.com/Yolo-00.png',
+    name: 'Yolo-00',
+    title: 'Creator',
+    links: [
+      { icon: 'github', link: 'https://github.com/Yolo-00' },
+      { icon: 'x', link: 'https://twitter.com/Yolo__00' }
+    ]
+  },
+]
+</script>
+
+<VPTeamMembers size="small" :members="members" />
