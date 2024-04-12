@@ -2,11 +2,34 @@
 
 This page demonstrates some of the built-in markdown extensions provided by VitePress.
 
+<script setup lang="ts">
+import { ref } from 'vue'
+import dome from "../components/dome.vue"
+
+const count = ref<string>(0);
+
+const handleAdd = () =>{
+  count.value+=1;
+};
+</script>
+
+## Markdown Content
+
+The count is: {{ count }}
+
+<dome />
+<el-button type="primary" @click="handleAdd">按钮</el-button>
+
+<style module>
+.button {
+  color: red;
+  font-weight: bold;
+}
+</style>
+
 ## Syntax Highlighting
 
 VitePress provides Syntax Highlighting powered by [Shiki](https://github.com/shikijs/shiki), with additional features like line-highlighting:
-
-**Input**
 
 ````
 ```js{4}

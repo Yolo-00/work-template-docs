@@ -1,10 +1,13 @@
 import { defineConfig } from 'vitepress'
+import { search as searchConfig } from "./themeConfig/search";
 
 // https://vitepress.dev/reference/site-config
+/** @type {import('vitepress').UserConfig} */
 export default defineConfig({
   title: "work-template",
   head: [['link', { rel: 'icon', href: '/favicon.svg' }]],
   description: "work-template介绍",
+  lastUpdated: true,
   locales: {
     root: { label: '简体中文', lang: "zh" },
     en: { label: 'English', link: 'https://cn.vitejs.dev' },
@@ -12,33 +15,34 @@ export default defineConfig({
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     logo: '/favicon.svg',
-    docFooter: {
-      prev: '上一页',
-      next: '下一页'
-    },
     search: {
       provider: 'local',
       options: {
         locales: {
-          root: {
-            translations: {
-              button: {
-                buttonText: '搜索文档',
-                buttonAriaLabel: '搜索文档'
-              },
-              modal: {
-                noResultsText: '无法找到相关结果',
-                resetButtonTitle: '清除查询条件',
-                footer: {
-                  selectText: '选择',
-                  navigateText: '切换'
-                }
-              }
-            }
-          }
+          ...searchConfig
         }
       }
     },
+    outline: {
+      label: '页面导航'
+    },
+    docFooter: {
+      prev: '上一页',
+      next: '下一页'
+    },
+    lastUpdated: {
+      text: '最后更新于',
+      formatOptions: {
+        dateStyle: 'short',
+        timeStyle: 'medium'
+      }
+    },
+    langMenuLabel: '多语言',
+    returnToTopLabel: '回到顶部',
+    sidebarMenuLabel: '菜单',
+    darkModeSwitchLabel: '主题',
+    lightModeSwitchTitle: '切换到浅色模式',
+    darkModeSwitchTitle: '切换到深色模式',
     nav: [
       { text: '配置', link: '/markdown-examples' }
     ],
@@ -60,10 +64,18 @@ export default defineConfig({
       copyright: 'Copyright © 2019-present <a href="https://github.com/Yolo-00">Yolo-00</a>'
     }
   },
+  /** @type {import('vite').UserConfig} */
   vite: {
     server: {
       host: true,
-      port: 1008
-    }
+      port: 1008,
+      proxy: {
+        "/prod-api": {
+          target: "https://backend-store-dev.dev.qcdl.com.cn/prod-api",
+          changeOrigin: true,
+          rewrite: (p) => p.replace(/^\/prod-api/, ""),
+        },
+      },
+    },
   }
 })
